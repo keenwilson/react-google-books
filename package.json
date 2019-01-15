@@ -1,0 +1,38 @@
+{
+  "name": "react-google-books",
+  "version": "1.0.0",
+  "description": "A React-based Google Books Search app. Create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. Use Node, Express and MongoDB so that users can save books to review or purchase later.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenwilson/react-google-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keenwilson/react-google-books/issues"
+  },
+  "homepage": "https://github.com/keenwilson/react-google-books#readme",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "axios": "^0.18.0",
+    "mongoose": "^5.3.16"
+  }
+}
