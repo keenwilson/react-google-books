@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-import Search from "./components/Search";
-import Saved from "./components/Saved";
-import NotFound from "./components/notFound";
+import Search from "./pages/search";
+import Saved from "./pages/save";
+import NotFound from "./pages/notFound";
 import NavBar from "./components/NavBar";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 class App extends Component {
   render() {
     return (
-      <section class="hero-is-fullheight">
+      <section className="hero-is-fullheight">
         <div className="head-head">
           <NavBar />
         </div>

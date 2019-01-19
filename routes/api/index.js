@@ -6,7 +6,7 @@ const googleRoutes = require("./google");
 // Books routes match /api/books
 router.use("/books", booksRoutes);
 
-// Google Routes match /api/google
+// Google Routes match /api/books
 router.use("/google", googleRoutes);
 
 // For anything else, render the html page
