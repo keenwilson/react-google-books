@@ -77,9 +77,11 @@ class Saved extends Component {
                 ))}
               </List>
             ) : (
-              <h2 className="brand-title text-center">
-                No saved books in the database
-              </h2>
+              <div className="mockup-content">
+                <h2 className="brand-title text-center">
+                  No saved books in the database
+                </h2>
+              </div>
             )}
           </div>
         </div>
