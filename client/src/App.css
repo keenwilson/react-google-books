@@ -1,32 +1,50 @@
-.App {
-  text-align: center;
+.brand-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 16px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.heading-title {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
+.heading-subtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 10px;
+}
+
+p,
+.p-article {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.hero-is-fullheight {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+.hero-head {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.hero-body {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+}
+.hero-foot {
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col-centered {
+  float: none;
+  margin: 0 auto;
 }
