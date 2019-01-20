@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { toast } from "react-toastify";
 import Book from "../components/Book/index";
 import SearchForm from "../components/SearchForm/index";
 import { List } from "../components/List/index";
@@ -22,6 +23,7 @@ class Search extends Component {
   };
 
   getBooks = () => {
+    toast.info("Searching books... !");
     API.getBooks(this.state.q)
       .then(res =>
         this.setState({
@@ -29,13 +31,15 @@ class Search extends Component {
           currentPage: 1
         })
       )
-      .catch(() =>
+      .catch(() => {
+        toast.error("Your search did not match any book results.");
+
         this.setState({
           books: [],
           message: "Your search did not match any book results.",
           currentPage: 1
-        })
-      );
+        });
+      });
   };
 
   handleFormSubmit = event => {

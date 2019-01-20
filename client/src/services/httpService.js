@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import logger from "./logService";
 
 // Whenever we have an response with an error, this function will be called first and then the controller will pass to a catch block
@@ -13,6 +14,7 @@ axios.interceptors.response.use(null, error => {
     // - Log them
     // - Display a generic and friendly error message
     logger.log(error);
+    toast.error("An unexpected error occured.");
   }
 
   return Promise.reject(error);

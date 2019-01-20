@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { toast } from "react-toastify";
 import { List } from "../components/List/index";
 import Book from "../components/Book/index";
 import API from "../utils/API";
@@ -22,9 +23,15 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
-  handleBookDelete = id => {
-    console.log("Delete book id", id);
-    API.deleteBook(id).then(res => this.getSavedBooks());
+  handleBookDelete = async id => {
+    const originalBooks = this.state.books;
+    try {
+      await API.deleteBook(id).then(res => this.getSavedBooks());
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        toast.error("This book has been deleted.");
+      this.setState({ books: originalBooks });
+    }
   };
   render() {
     const { length: count } = this.state.books;
