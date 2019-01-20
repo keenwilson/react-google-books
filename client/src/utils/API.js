@@ -1,9 +1,12 @@
+require("dotenv").config();
 import http from "../services/httpService";
 
 export default {
   // Gets books from the Google API
   getBooks: function(q) {
-    return http.get("/api/google", { params: { q: "title:" + q } });
+    return http.get("/api/google", {
+      params: { q: "title:" + q, key: GOOGLE_APIKEY }
+    });
   },
   // Gets all saved books
   getSavedBooks: function() {

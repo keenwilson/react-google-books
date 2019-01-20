@@ -9,10 +9,7 @@ class Search extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!",
-    currentPage: 1,
-    pageSize: 2,
-    sortColumn: { path: "title", order: "asc" }
+    message: "Simply search for books via the Google Books API"
   };
 
   handleInputChange = event => {
