@@ -23,7 +23,6 @@ class Search extends Component {
   };
 
   getBooks = () => {
-    toast.info("Searching books... !");
     API.getBooks(this.state.q)
       .then(res =>
         this.setState({
@@ -44,6 +43,7 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    toast.info("Searching books... !");
     this.getBooks();
   };
 
